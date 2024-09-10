@@ -8,3 +8,32 @@ hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     menuBar.classList.toggle('active');
 });
+
+function typeWriter(element, text, delay = 100) {
+    let i = 0;
+    function typing() {
+        if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(typing, delay);
+        }
+    }
+    typing();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const titleElement = document.getElementById('intro-title');
+    const subtitleElement = document.getElementById('intro-subtitle');
+
+    // Clear the initial content
+    titleElement.textContent = "";
+    subtitleElement.textContent = "";
+
+    // Type the first sentence
+    typeWriter(titleElement, "Hello, I'm Nam Joon Kim.", 100);
+
+    // Delay the typing of the second sentence
+    setTimeout(() => {
+        typeWriter(subtitleElement, "I am a full-stack junior developer.", 100);
+    }, 3200); // Delay for the second sentence after the first one completes
+});

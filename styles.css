@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
 }
 
 body {
@@ -13,6 +13,17 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    /* position: relative; */
+}
+body::before{
+    content: "";
+    opacity: 0.5;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;    
+    background-color : #000;
 }
 
 .menu-block {
@@ -75,6 +86,38 @@ body {
     transition: 0.3s;
 }
 
+#intro-title {
+    border-right: 2px solid rgba(255, 255, 255, 0.75); /* Adds the cursor effect */
+    font-size: 32px;
+    white-space: nowrap; /* Prevents line breaks */
+    overflow: hidden; /* Hides the overflowing text */
+    /* width: 0; Initially set width to 0 */
+    display: inline-block;
+    animation: blink 0.75s step-end infinite;
+}
+#intro-subtitle {
+    border-right: 2px solid rgba(255, 255, 255, 0.75); /* Adds the cursor effect */
+    font-size: 32px;
+    white-space: nowrap; /* Prevents line breaks */
+    overflow: hidden; /* Hides the overflowing text */
+    /* width: 0; Initially set width to 0 */
+    display: inline-block;
+    animation: blink 0.75s step-end infinite;
+}
+
+/* Optional: Blinking cursor animation */
+@keyframes blink {
+    0% { border-right-color: rgba(255, 255, 255, 0.75); }
+    50% { border-right-color: transparent; }
+    100% { border-right-color: rgba(255, 255, 255, 0.75); }
+}
+
+/* Add a basic typewriter animation
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+} */
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     .menu-block {        
@@ -89,6 +132,10 @@ body {
         right: 10px;
         width: 120px;
         border-radius: 10px;
+        transition: all 0.3s ease; 
+    }
+    body{
+        background-attachment: scroll;
     }
     .hamburger .bar {
         opacity: 100%;
@@ -118,6 +165,9 @@ body {
     .hamburger.active .bar:nth-child(3) {
         transform: rotate(45deg) translate(-10px, -11px);
     }
+    footer{
+        position: relative;
+    }
 }
 
 /* Adjust main content spacing */
@@ -126,6 +176,7 @@ main {
     text-align: center;
     margin-top: 80px;
     color: white;
+    position: relative;
 }
 
 section {
