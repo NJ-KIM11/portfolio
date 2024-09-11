@@ -87,36 +87,48 @@ body::before{
 }
 
 #intro-title {
-    border-right: 2px solid rgba(255, 255, 255, 0.75); /* Adds the cursor effect */
+    border-right: transparent; /* Adds the cursor effect */
     font-size: 32px;
     white-space: nowrap; /* Prevents line breaks */
     overflow: hidden; /* Hides the overflowing text */
     /* width: 0; Initially set width to 0 */
     display: inline-block;
-    animation: blink 0.75s step-end infinite;
+    animation: blink 0.75s step-end;
+    animation-iteration-count: 4.1;
+    animation-fill-mode: none;
 }
+
 #intro-subtitle {
-    border-right: 2px solid rgba(255, 255, 255, 0.75); /* Adds the cursor effect */
+    border-right: 3px solid rgba(255, 255, 255, 0.75); /* Adds the cursor effect */
     font-size: 32px;
     white-space: nowrap; /* Prevents line breaks */
     overflow: hidden; /* Hides the overflowing text */
     /* width: 0; Initially set width to 0 */
     display: inline-block;
     animation: blink 0.75s step-end infinite;
+    
 }
 
 /* Optional: Blinking cursor animation */
 @keyframes blink {
-    0% { border-right-color: rgba(255, 255, 255, 0.75); }
+    0% { 
+        border-right: 3px solid rgba(255, 255, 255, 0.75); /* Adds the cursor effect */
+        font-size: 32px;
+        white-space: nowrap; /* Prevents line breaks */
+        overflow: hidden; /* Hides the overflowing text */
+        display: inline-block;
+     }
     50% { border-right-color: transparent; }
-    100% { border-right-color: rgba(255, 255, 255, 0.75); }
+    100% { 
+        border-right: 3px solid rgba(255, 255, 255, 0.75); /* Adds the cursor effect */
+        font-size: 32px;
+        white-space: nowrap; /* Prevents line breaks */
+        overflow: hidden; /* Hides the overflowing text */    
+        display: inline-block;
+     }
+    
 }
 
-/* Add a basic typewriter animation
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-} */
 
 /* Responsive Styles */
 @media (max-width: 768px) {
