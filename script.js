@@ -21,25 +21,29 @@ function typeWriter(element, text, delay = 100) {
     typing();
 }
 
-function typeWriter2(element, text, delay = 100) {
-    element.textContent += text.charAt(0);
-}
-
 
 document.addEventListener("DOMContentLoaded", () => {
     const titleElement = document.getElementById('intro-title');
     const subtitleElement = document.getElementById('intro-subtitle');
-
+    
     // Clear the initial content
     titleElement.textContent = "";
-    subtitleElement.textContent = document.getElementById('intro-subtitle')[0];
-
+    subtitleElement.innerHTML = "";
+    
     // Type the first sentence
     typeWriter(titleElement, "Hello, I'm Nam Joon Kim.", 100);
-    typeWriter2(subtitleElement, " I am a full-stack junior developer.");
+    
+    
+    // typing1(subtitleElement, "MI am a full-stack junior developer." );
     // Delay the typing of the second sentence
     setTimeout(() => {
-        
-        typeWriter(subtitleElement, " I am a full-stack junior developer.", 100);
-    }, 3800); // Delay for the second sentence after the first one completes
+        subtitleElement.innerHTML = "&nbsp;";
+
+        setTimeout(() => {
+            subtitleElement.textContent = "";
+            typeWriter(subtitleElement, "I am a full-stack junior developer.", 100);
+        }, 2000);
+
+    }, 3200);
+     // Delay for the second sentence after the first one completes
 });
