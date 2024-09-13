@@ -87,14 +87,14 @@ body::before{
 }
 
 #intro-title {
-    border-right: transparent; /* Adds the cursor effect */
+    border-right: 3px solid rgb(255, 255, 255); /* Adds the cursor effect */
     font-size: 32px;
     white-space: nowrap; /* Prevents line breaks */
     overflow: hidden; /* Hides the overflowing text */
     /* width: 0; Initially set width to 0 */
     display: inline-block;
     animation: blink 0.75s step-end;
-    animation-iteration-count: 4.1;
+    animation-iteration-count: 3;
     animation-fill-mode: none;
 }
 

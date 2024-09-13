@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
     subtitleElement.innerHTML = "";
     
     // Type the first sentence
-    typeWriter(titleElement, "Hello, I'm Nam Joon Kim.", 100);
-    
+    typeWriter(titleElement, "Hello, I'm Nam Joon Kim.", 50);
+    titleElement.style.borderRightColor = "transparent";
     
     // typing1(subtitleElement, "MI am a full-stack junior developer." );
     // Delay the typing of the second sentence
@@ -41,9 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setTimeout(() => {
             subtitleElement.textContent = "";
-            typeWriter(subtitleElement, "I am a full-stack junior developer.", 100);
-        }, 2000);
+            typeWriter(subtitleElement, "I am a full-stack junior developer.", 50);
+        }, 1000);
 
-    }, 3200);
+    }, 2000);
      // Delay for the second sentence after the first one completes
 });
